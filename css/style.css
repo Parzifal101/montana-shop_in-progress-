@@ -391,13 +391,13 @@ header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list
   font-weight: 600;
 }
 .container-latest .container-latest__wrapper .container-latest__down-slider {
-  display: flex;
-  width: 100%;
+  width: 2600px;
   height: 400px;
   justify-content: space-between;
 }
 .container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 {
-  width: 40%;
+  width: 14%;
+  display: inline-block;
 }
 .container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__info {
   display: flex;

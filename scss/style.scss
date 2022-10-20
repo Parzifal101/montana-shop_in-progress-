@@ -134,12 +134,13 @@
             }
         }
         .container-latest__down-slider {
-            display: flex;
-            width: 100%;
+            // display: flex;
+            width: 2600px;
             height: 400px;
             justify-content: space-between;
             .container-latest__product1 {
-                width: 40%;
+                width: 14%;
+                display: inline-block;
                 // background-color: #A8E200;
                 .container-latest__info {
                     display: flex;
