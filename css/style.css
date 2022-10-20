@@ -1,0 +1,495 @@
+@charset "UTF-8";
+/* НАЧАЛО СБРОСА СТИЛЕЙ */
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  white-space: normal;
+}
+
+:root {
+  --marquee-elements-displayed: 4;
+  --marquee-element-width: calc(100vw / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 1s);
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+li[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  white-space: normal;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Exo 2", sans-serif;
+  white-space: normal;
+  background-color: #F2F2F2;
+  overflow-x: hidden;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul {
+  list-style: none;
+  padding: 0%;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-device-width: 470px) {
+  body {
+    overflow-x: hidden;
+    max-width: 400px;
+  }
+}
+/* КОНЕЦ СБРОСА СТИЛЕЙ */
+@font-face {
+  font-family: "Akira";
+  src: url("../font/Akira Expanded Demo.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+header {
+  width: 100%;
+  height: 150px;
+  padding: 0%;
+  margin: 0%;
+}
+header .header-wrapper {
+  width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem;
+}
+header .header-wrapper .header-wrapper__logo {
+  width: 10%;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
+}
+header .header-wrapper .header-wrapper__add-menu {
+  display: flex;
+  width: 32%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+header .header-wrapper .header-wrapper__add-menu li {
+  margin-left: 2%;
+  font-size: 14px;
+}
+header .header-wrapper .header-wrapper__search {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2%;
+}
+header .header-wrapper .header-wrapper__search input {
+  width: 100%;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgb(153, 153, 153);
+}
+header .header-wrapper .header-wrapper__basket {
+  width: 32px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+header .header-wrapper nav {
+  width: 100%;
+  height: 42px;
+}
+header .header-wrapper nav .header-wrapper__main-menu {
+  width: 100%;
+  display: flex;
+  padding: 0%;
+  padding-top: 2rem;
+}
+header .header-wrapper nav .header-wrapper__main-menu li {
+  font-size: 28px;
+  border: 1px solid rgb(73, 73, 73);
+  padding: 6px 45.4px 6px 45.4px;
+  font-family: "Akira";
+  cursor: pointer;
+}
+header .header-wrapper nav .header-wrapper__main-menu li:hover .header-wrapper__submenu {
+  display: block;
+}
+header .header-wrapper nav #none {
+  display: none;
+}
+header .header-wrapper nav #active {
+  display: block;
+}
+header .header-wrapper nav .header-wrapper__submenu {
+  display: block;
+  position: absolute;
+  width: 100%;
+  padding-left: 0%;
+  top: 141px;
+  margin-left: -46px;
+  z-index: 2;
+}
+header .header-wrapper nav .header-wrapper__submenu li {
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Exo 2", sans-serif;
+  background-color: #F2F2F2;
+}
+header .header-wrapper nav .menu-container {
+  width: 100%;
+  position: relative;
+  height: 290px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F2F2F2;
+  z-index: 2;
+  border: 1px solid rgb(153, 153, 153);
+  padding-top: 1%;
+  padding-right: 2%;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: stretch;
+  justify-content: flex-start;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__add-img {
+  height: 250px;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: url(../img/610a60498ff88.jpg);
+  background-size: cover;
+  flex: 1 0 auto;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__level-0 {
+  font-size: 22px;
+  margin-left: 2%;
+  font-weight: 500;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__level-0 hr {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(153, 153, 153);
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__level-0 ul {
+  margin-top: 6%;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__level-0 ul li {
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+}
+header .header-wrapper nav .menu-container .menu-container__menu-list .menu-list__level-0 ul li:hover {
+  font-weight: 600;
+}
+
+@-webkit-keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+  }
+}
+.container-wellcome {
+  width: 100%;
+  margin-top: 2%;
+}
+.container-wellcome .container-wellcome__wrapper {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8%;
+}
+.container-wellcome .container-wellcome__wrapper .wrapper__up-content {
+  width: 100%;
+}
+.container-wellcome .container-wellcome__wrapper .wrapper__up-content h1 {
+  width: 66%;
+  display: inline-block;
+  font-size: 72px;
+  text-align: right;
+  font-family: "Akira";
+}
+.container-wellcome .container-wellcome__wrapper .wrapper__up-content span {
+  color: #A8E200;
+}
+.container-wellcome .container-wellcome__wrapper .wrapper__up-content .wrapper__shop-now {
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #A8E200;
+  border-radius: 50%;
+  position: absolute;
+  top: 208px;
+  right: 300px;
+  font-family: "Akira";
+  cursor: pointer;
+}
+.container-wellcome .container-wellcome__wrapper .wrapper__down-content {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 2rem;
+  background: url(../img/610a60498ff88.jpg) no-repeat;
+  background-size: cover;
+}
+
+.container-latest {
+  width: 100%;
+  margin-top: 2%;
+}
+.container-latest .container-latest__wrapper {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8%;
+}
+.container-latest .container-latest__wrapper h3 {
+  width: 30%;
+  font-size: 36px;
+  font-family: "Akira";
+}
+.container-latest .container-latest__wrapper .container-latest__up-content {
+  width: 100%;
+  display: inline-block;
+  margin-top: 2rem;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__big-product {
+  position: relative;
+  top: -27px;
+  display: inline-block;
+  width: 49.5%;
+  height: 600px;
+  background-color: #A8E200;
+  border: 1px solid #000;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__big-product .big-product__info {
+  display: flex;
+  margin-top: 64%;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__big-product .price {
+  margin-left: 58%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__big-product p {
+  margin-left: 4%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product {
+  width: 50%;
+  height: 600px;
+  display: inline-block;
+  position: relative;
+  top: -80px;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__product1 {
+  display: inline-block;
+  width: 47.7%;
+  height: 402px;
+  background-color: #A8E200;
+  border: 1px solid #000;
+  margin-left: 2%;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__product1 .container-latest__info {
+  display: flex;
+  margin-top: 82%;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__product1 .container-latest__info .price {
+  margin-left: 18%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__product1 .container-latest__info p {
+  width: 64%;
+  margin-left: 4%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__button {
+  display: inline-flex;
+  width: 98%;
+  height: 180px;
+  margin-right: 20%;
+  justify-content: center;
+  align-items: center;
+  background-color: #A8E200;
+  border: 1px solid #000;
+  margin-top: 2%;
+  margin-left: 2%;
+  cursor: pointer;
+}
+.container-latest .container-latest__wrapper .container-latest__up-content .container-latest__small-product .container-latest__button span {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: space-between;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 {
+  width: 40%;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__info {
+  display: flex;
+  margin-top: 82%;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__info .price {
+  margin-left: 18%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__info p {
+  width: 64%;
+  margin-left: 4%;
+  font-weight: 600;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__button-left {
+  width: 26%;
+  height: 98px;
+  display: inline-block;
+  background: url(../img/icons/bx_wallet.png) no-repeat;
+  background-size: contain;
+  margin-top: 72%;
+  opacity: 60%;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .container-latest__button-right {
+  width: 26%;
+  height: 98px;
+  display: inline-block;
+  background: url(../img/icons/bx_wallet.png) no-repeat;
+  background-size: contain;
+  margin-top: 72%;
+  margin-left: 4%;
+  opacity: 60%;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1 .active-arrow {
+  opacity: 100%;
+}
+.container-latest .container-latest__wrapper .container-latest__down-slider .container-latest__product1:not(:first-child) {
+  margin-left: 2%;
+  border: 1px solid #000;
+}
+
+.wellcome-container__partners {
+  width: 92%;
+  height: 200px;
+  margin-top: 7%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+.wellcome-container__partners .partners__logo-wrapper {
+  width: 222px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 var(--marquee-element-width);
+  color: #fff;
+  font-size: 26px;
+  padding: 0px 10px;
+}
+.wellcome-container__partners .partners__logo-wrapper img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  flex: 0 0 282px;
+  margin: 0px 20px 0px 0px;
+}
+.wellcome-container__partners .wellcome-container__up-partners {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 1s;
+  -webkit-animation: scrolling var(--marquee-animation-duration) linear infinite;
+          animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+
+.container-how-to-use {
+  width: 100%;
+  margin-top: 12%;
+}
+.container-how-to-use .container-how-to-use__wrapper {
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8%;
+}
+.container-how-to-use .container-how-to-use__wrapper h3 {
+  width: 30%;
+  font-size: 36px;
+  font-family: "Akira";
+}/*# sourceMappingURL=style.css.map */

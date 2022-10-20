@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* НАЧАЛО СБРОСА СТИЛЕЙ */
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  white-space: normal;
+}
+
+:root {
+  --marquee-elements-displayed: 4;
+  --marquee-element-width: calc(100vw / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 1s);
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+li[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  white-space: normal;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Exo 2", sans-serif;
+  white-space: normal;
+  background-color: #F2F2F2;
+  overflow-x: hidden;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul {
+  list-style: none;
+  padding: 0%;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (max-device-width: 470px) {
+  body {
+    overflow-x: hidden;
+    max-width: 400px;
+  }
+}
+/* КОНЕЦ СБРОСА СТИЛЕЙ *//*# sourceMappingURL=reset.css.map */
